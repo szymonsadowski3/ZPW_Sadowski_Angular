@@ -1,0 +1,236 @@
+[
+  {
+    "name": "1022-720x1280.jpg",
+    "preview_xxs": {
+      "path": "assets/img/gallery/preview_xxs/1022-720x1280.jpg",
+      "width": 211,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/img/gallery/preview_xs/1022-720x1280.jpg",
+      "width": 432,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/img/gallery/preview_s/1022-720x1280.jpg",
+      "width": 608,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "assets/img/gallery/preview_m/1022-720x1280.jpg",
+      "width": 900,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "assets/img/gallery/preview_l/1022-720x1280.jpg",
+      "width": 1215,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "assets/img/gallery/preview_xl/1022-720x1280.jpg",
+      "width": 1620,
+      "height": 2880
+    },
+    "raw": {
+      "path": "assets/img/gallery/raw/1022-720x1280.jpg",
+      "width": 720,
+      "height": 1280
+    },
+    "dominantColor": "#044f1d"
+  },
+  {
+    "name": "125-1280x720.jpg",
+    "preview_xxs": {
+      "path": "assets/img/gallery/preview_xxs/125-1280x720.jpg",
+      "width": 667,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/img/gallery/preview_xs/125-1280x720.jpg",
+      "width": 1365,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/img/gallery/preview_s/125-1280x720.jpg",
+      "width": 1920,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "assets/img/gallery/preview_m/125-1280x720.jpg",
+      "width": 2844,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "assets/img/gallery/preview_l/125-1280x720.jpg",
+      "width": 3840,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "assets/img/gallery/preview_xl/125-1280x720.jpg",
+      "width": 5120,
+      "height": 2880
+    },
+    "raw": {
+      "path": "assets/img/gallery/raw/125-1280x720.jpg",
+      "width": 1280,
+      "height": 720
+    },
+    "dominantColor": "#9a8481"
+  },
+  {
+    "name": "373-1280x720.jpg",
+    "preview_xxs": {
+      "path": "assets/img/gallery/preview_xxs/373-1280x720.jpg",
+      "width": 667,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/img/gallery/preview_xs/373-1280x720.jpg",
+      "width": 1365,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/img/gallery/preview_s/373-1280x720.jpg",
+      "width": 1920,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "assets/img/gallery/preview_m/373-1280x720.jpg",
+      "width": 2844,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "assets/img/gallery/preview_l/373-1280x720.jpg",
+      "width": 3840,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "assets/img/gallery/preview_xl/373-1280x720.jpg",
+      "width": 5120,
+      "height": 2880
+    },
+    "raw": {
+      "path": "assets/img/gallery/raw/373-1280x720.jpg",
+      "width": 1280,
+      "height": 720
+    },
+    "dominantColor": "#2f4449"
+  },
+  {
+    "name": "408-1280x720.jpg",
+    "preview_xxs": {
+      "path": "assets/img/gallery/preview_xxs/408-1280x720.jpg",
+      "width": 667,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/img/gallery/preview_xs/408-1280x720.jpg",
+      "width": 1365,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/img/gallery/preview_s/408-1280x720.jpg",
+      "width": 1920,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "assets/img/gallery/preview_m/408-1280x720.jpg",
+      "width": 2844,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "assets/img/gallery/preview_l/408-1280x720.jpg",
+      "width": 3840,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "assets/img/gallery/preview_xl/408-1280x720.jpg",
+      "width": 5120,
+      "height": 2880
+    },
+    "raw": {
+      "path": "assets/img/gallery/raw/408-1280x720.jpg",
+      "width": 1280,
+      "height": 720
+    },
+    "dominantColor": "#7b604f"
+  },
+  {
+    "name": "410-1280x720.jpg",
+    "preview_xxs": {
+      "path": "assets/img/gallery/preview_xxs/410-1280x720.jpg",
+      "width": 667,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/img/gallery/preview_xs/410-1280x720.jpg",
+      "width": 1365,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/img/gallery/preview_s/410-1280x720.jpg",
+      "width": 1920,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "assets/img/gallery/preview_m/410-1280x720.jpg",
+      "width": 2844,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "assets/img/gallery/preview_l/410-1280x720.jpg",
+      "width": 3840,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "assets/img/gallery/preview_xl/410-1280x720.jpg",
+      "width": 5120,
+      "height": 2880
+    },
+    "raw": {
+      "path": "assets/img/gallery/raw/410-1280x720.jpg",
+      "width": 1280,
+      "height": 720
+    },
+    "dominantColor": "#ad9f90"
+  },
+  {
+    "name": "681-1280x720.jpg",
+    "preview_xxs": {
+      "path": "assets/img/gallery/preview_xxs/681-1280x720.jpg",
+      "width": 667,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/img/gallery/preview_xs/681-1280x720.jpg",
+      "width": 1365,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/img/gallery/preview_s/681-1280x720.jpg",
+      "width": 1920,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "assets/img/gallery/preview_m/681-1280x720.jpg",
+      "width": 2844,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "assets/img/gallery/preview_l/681-1280x720.jpg",
+      "width": 3840,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "assets/img/gallery/preview_xl/681-1280x720.jpg",
+      "width": 5120,
+      "height": 2880
+    },
+    "raw": {
+      "path": "assets/img/gallery/raw/681-1280x720.jpg",
+      "width": 1280,
+      "height": 720
+    },
+    "dominantColor": "#1c2d3b"
+  }
+]

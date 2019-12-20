@@ -1,0 +1,43 @@
+https://medium.com/@literallywords/things-i-wish-i-knew-about-protractor-before-i-started-84fea284a87f
+
+Wytyczne dla części praktycznej
+zajęć z Testowania Oprogramowania
+Cześć teoretyczna z Testowania macie Państwo za sobą. Przyszła teraz pora na część
+praktyczną.
+Może ona być zaliczona na 3 różne sposoby:
+1. Wykonanie testów i przygotowanie raportu z testowania dla załączanego projektu
+wykonanego w JavaEE. W dołączonym projekcie znajdziecie Państwo wytyczne
+projektowe (symulujące specyfikacje wymagań) oraz dokumentacje techniczna
+wykonanego projektu (niestety w wersji bardzo okrojonej). - dotyczy grupy mającej
+lab z ZPW z panią Środą.
+2. Wykonując testy oraz przygotowując raport z testów dla tworzonej w ramach zajęć z
+ZPW aplikacji Biuro Turystyczne. ( dotyczy „moich” grup z ZPW)
+3. Wykonując testy oraz przygotowując raport z testów dla dowolnej samodzielnie
+tworzonej aplikacji (wymagana jest uzyskanie mojej zgody – uwarunkowane zakresem
+zrealizowanej aplikacji)
+Niezależnie od tego, którą ścieżkę Państwo wybiorą wcielacie się Państwo w testera
+zewnętrznego, którego zadaniem jest przetestowanie wybranej aplikacji.
+Zakres przeprowadzonych testów:
+Testy integracyjne
+Testy systemowe
+Testy wydajnościowe
+Testy bezpieczeństwa
+Do zaliczenie wystarcza testy funkcjonalne (integracyjne + systemowe). Testy
+wydajnościowe + bezpieczeństwa są wymagane dla osób które chcą zaliczyć cześć praktyczna
+na 5.0.
+Przeprowadzone testy maja być udokumentowane w postaci planu testów.
+Dokument typu Plan testów powinien zawierać:
+Opis środowiska testowego oraz planowanych narzędzi jakie posłużą testowaniu.
+Przygotowanie i opis przypadków testowych dla testów integracyjnych.
+Przygotowanie zestawu danych do testów integracyjnych + wyjaśnienie powodów
+wyboru takiego a nie innego zestawu danych
+Przygotowanie i opis przypadków testowych dla testów systemowych.
+Przygotowanie zestawu danych do testów systemowych + wyjaśnienie powodów
+wyboru takiego a nie innego zestawu danych
+Przygotowanie i opis przypadków testowych dla testów wydajnościowych.
+Przygotowanie audytu bezpieczeństwa,
+Wyniki testów gromadzimy w Raporcie z testów. Zawiera on wyniki wykonanych testów oraz
+audytów. Wyniki maja być przeanalizowane i wyciągnięte wnioski w postaci zalecań dla
+zespołu developerskiego.
+Mile widziane przeprowadzenie testów automatycznych z wykorzystaniem dedykowanych
+narzędzi np. Web Drive dla Selenium.

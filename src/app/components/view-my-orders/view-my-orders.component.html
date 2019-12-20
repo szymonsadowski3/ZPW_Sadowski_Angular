@@ -1,0 +1,59 @@
+<div class="container main">
+  <h1>Showing orders:</h1>
+
+  <div
+    *ngFor="let item of this.filteredOrders"
+    class="order-summary shadow"
+  >
+    <h5>order {{item[this.IDKEY]}} made on {{item.creationDate | date}}</h5>
+
+    <div class="container mt-3 koszyk">
+      <table id="cart" class="table table-hover table-condensed">
+        <thead>
+        <tr>
+          <th style="width:50%">Product</th>
+          <th style="width:10%">Price</th>
+          <th style="width:8%">Quantity</th>
+          <th style="width:22%" class="text-center">Subtotal</th>
+          <th style="width:10%"></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr
+          *ngFor="let product of item.products"
+        >
+          <td
+            data-th="Product"
+          >
+            <div class="row">
+              <div class="col-2 hidden-sm">
+                <img src="{{product.trip.linkDoZdj+'?v='+product.trip.docelowyKrajWycieczki}}" alt="..."
+                     class="img-responsive" width="40"/>
+              </div>
+              <div class="col-10">
+                <h4 class="nomargin">{{product.trip.nazwa}}</h4>
+                <p>{{product.trip.opis}}</p>
+                <p>Wybrana preferowana data: {{product.preferredDate | date}}</p>
+              </div>
+            </div>
+          </td>
+          <td data-th="Price">{{product.trip.cenaJednostkowa | currency: 'EUR'}}</td>
+          <td data-th="Quantity" class="quantity">
+            {{product.count}}
+          </td>
+          <td data-th="Subtotal"
+              class="text-center">{{product.trip.cenaJednostkowa * product.count | currency: 'EUR'}}</td>
+        </tr>
+
+        </tbody>
+        <tfoot>
+        <tr>
+          <td class="hidden-xs text-center"><strong>Total: {{this.getTotal(item.products) | currency: 'EUR'}}</strong>
+          </td>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,147 @@
+<div class="wycieczka-detal-wrapper">
+  <div class="card mb-4 shadow-lg wycieczka-detail">
+    <div>
+      <button
+        class="btn add-to-cart-button"
+        tooltip="Wycieczka dodana do koszyka!" placement="bottom" trigger="click"
+        (click)="this.koszykService.addProduct(this.wycieczka, this.preferredDate)"
+      >
+        <i class="fa fa-plus"></i>
+      </button>
+    </div>
+
+
+    <img src="{{this.wycieczka.linkDoZdj}}" class="detail-img"/>
+    <div class="card-body">
+      <h5 class="card-title">{{this.wycieczka.nazwa | uppercase}}</h5>
+      <p class="card-text">{{this.wycieczka.opis}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Kraj docelowy: {{this.wycieczka.docelowyKrajWycieczki | uppercase}}</li>
+      <li class="list-group-item">
+        📅 {{this.wycieczka.dataRozpoczecia}} - {{this.wycieczka.dataZakonczenia}}
+        📅
+      </li>
+      <li class="list-group-item">
+        💶 Cena: {{this.wycieczka.cenaJednostkowa | currency: 'EUR'}}
+      </li>
+      <li class="list-group-item">
+        ⚠️Max ilość miejsc: {{this.wycieczka.maxIloscMiejsc}}
+      </li>
+      <li class="list-group-item">
+        <div *ngIf="this.wycieczka.ileZarezerwowano == this.wycieczka.maxIloscMiejsc; else availablePlaces">
+          Brak dostępnych miejsc!
+        </div>
+
+        <ng-template #availablePlaces>
+          Ile zarezerwowano: {{this.wycieczka.ileZarezerwowano}}
+        </ng-template>
+      </li>
+    </ul>
+    <div class="card-body">
+      <h6>Preferowana data wycieczki</h6>
+      <div class="date-picker-wrapper mb-2">
+        <angular2-date-picker [(ngModel)]="preferredDate" [settings]="settings"></angular2-date-picker>
+      </div>
+
+
+      <button
+        class="btn btn-primary plus-button"
+        [ngClass]="{'hidden-button': this.wycieczka.ileZarezerwowano == this.wycieczka.maxIloscMiejsc}"
+        (click)="onClickPlusButton(this.wycieczka)"
+      >
+        <i class="fa fa-plus"></i>
+      </button>
+
+      <button
+        class="btn btn-warning minus-button"
+        [ngClass]="{'hidden-button': this.wycieczka.ileZarezerwowano == 0}"
+        (click)="onClickMinusButton(this.wycieczka)"
+      >
+        <i class="fa fa-minus"></i>
+      </button>
+    </div>
+
+    <div class="card-body">
+      <h6>Galeria zdjęć</h6>
+
+      <!--<gallery-->
+        <!--[flexBorderSize]="4"-->
+        <!--[flexImageSize]="11"-->
+        <!--[maxRowsPerPage]="100"-->
+      <!--&gt;-->
+      <!--</gallery>-->
+      <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+    </div>
+
+    <div class="card-body">
+      <h6>Oceń tą wycieczkę</h6>
+
+      <div class="alert alert-danger" role="alert" *ngIf="!this.didUserReserveTrip">
+        You need to have at least one reservation in order to rate this trip!
+      </div>
+
+      <div *ngIf="this.alreadyRated">
+        Nie można ocenić! Już oceniłeś!
+      </div>
+
+      <ocena-component
+        (ratingAdded)="addRating($event)"
+        [readonly]="!this.didUserReserveTrip || (this.alreadyRated)"
+      ></ocena-component>
+
+      <hr>
+
+      <h6
+        *ngIf="this.ratings.length > 0"
+      >Zestawienie ocen</h6>
+
+
+
+      <div
+        *ngFor="let item of this.ratings"
+      >
+        <div>
+          <div style="width:10%; line-height:1;">
+            <div style="height:9px; margin:5px 0;">{{item[0]}} <span class="glyphicon glyphicon-star"></span></div>
+          </div>
+          <div style="width:80%;">
+            <div class="row">
+              <div class="col-10">
+                <div class="progress" style="height:9px; margin:8px 0;">
+                  <div class="progress-bar progress-bar-primary" role="progressbar" [attr.aria-valuenow]="item[0]" aria-valuemin="0" aria-valuemax="5" [style.width]="item[0]*20+'%'">
+                    <span class="sr-only">80% Complete (danger)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <span>{{item[1]}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <h6>Mapa wycieczki:</h6>
+
+      <div id="mapa" class="map"></div>
+    </div>
+
+    <div class="card-body">
+      <h6>Dodaj swoją opinię:</h6>
+
+      <div class="form-group">
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
+                [attr.disabled]="this.didUserReserveTrip ? null : true"
+      >
+      </textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+
+</div>

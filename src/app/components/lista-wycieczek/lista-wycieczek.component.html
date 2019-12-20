@@ -1,0 +1,100 @@
+<div class="lista-wycieczek">
+  <h1 class="mb-4">Lista dostępnych wycieczek</h1>
+
+  <div class="row itemsBlock">
+    <div class="col-2 filter-section">
+
+      <form
+        [formGroup]="filterForm"
+      >
+        <div class="form-group">
+          <label>Docelowy kraj wycieczki:</label>
+
+          <angular2-multiselect [data]="this.dropdownList"
+                                formControlName="docelowyKrajWycieczki"
+                                [settings]="{text: 'Wybierz'}"
+                                [(ngModel)]="selectedItems"
+          >
+
+          </angular2-multiselect>
+
+          <hr/>
+
+          <label>Cena minimalna:</label>
+          <input name="priceMin" formControlName="priceMin" class="form-control" type="number" min="0"
+                 max="100000"/>
+
+          <label>Cena maksymalna:</label>
+          <input name="priceMax" formControlName="priceMax" class="form-control" type="number" min="0"
+                 max="100000"/>
+
+          <hr>
+
+          <label class="d-none d-md-block">Przedział cenowy:</label>
+
+          <ng5-slider
+            [(value)]="this.filterForm.get('priceMin').value"
+            [(highValue)]="this.filterForm.get('priceMax').value"
+            [options]="priceRangeOptions"
+            (valueChange)="this.refreshFormGroup()"
+            (highValueChange)="this.refreshFormGroup()"
+            class="d-none d-md-block"
+          ></ng5-slider>
+
+          <hr/>
+
+          <label>Średnia ocena:</label>
+
+          <input name="avgRating" formControlName="avgRating" class="form-control" type="number" min="0" max="5"
+                 step="1"/>
+
+
+          <div class="mt-4">
+            <ng5-slider
+              [(value)]="this.filterForm.get('avgRating').value"
+              [options]="this.tickOptions"
+              (valueChange)="this.refreshFormGroup()"
+              class="d-none d-md-block"
+            ></ng5-slider>
+          </div>
+        </div>
+      </form>
+
+
+    </div>
+    <div class="col-10">
+      <div class="row">
+
+        <wycieczka-component
+          class="col-lg-4 col-md-6 col-sm-12 col-12 single-wycieczka"
+          *ngFor="let item of wycieczki  | equityfilter: getFilteringCriteria() | paginate: { itemsPerPage: this.specifiedItemsPerPage, currentPage: page }"
+          [wycieczka]="item"
+          [isCheapest]="(item[this.IDKEY]==minPriceTrip[this.IDKEY])"
+          [isMostExpensive]="(item[this.IDKEY]==maxPriceTrip[this.IDKEY])"
+          (reservationChanged)="calculateSumOfReservedTrips($event)"
+          (tripAddedToCart)="addTripToCart($event)"
+        ></wycieczka-component>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagination-wrapper pb-5">
+  <div class="pagination-controls-wrappers mb-5">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+
+  Ile wyświetlać na stronę?: <input type="number" min="1" step="1" id="ileNaStrone" name="ileNaStrone"
+                                    [(ngModel)]="this.specifiedItemsPerPage" [value]="this.specifiedItemsPerPage">
+</div>
+
+
+<div
+  class="total-trips shadow mb-4"
+  [ngClass]="{
+        'low-sum': (sum <10),
+        'high-sum': (sum >=10)
+      }"
+>
+  Suma zarezerwowanych wycieczek: {{sum}}
+</div>

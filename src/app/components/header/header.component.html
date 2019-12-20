@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container-fluid padded">
+    <a class="navbar-brand js-scroll-trigger site-title-bar" routerLink="/wycieczki">Biuro Podróży SadovSky</a>
+    <img src="http://reseller-hosting.pl/wp-content/uploads/2018/12/travel.jpg" width="100" height="50" class="ml-3 d-inline-block align-top" alt="">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase">
+        <li class="nav-item dropdown open-cart-toggle">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Koszyk
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" onclick="event.stopPropagation();">
+            <koszyk-component></koszyk-component>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link go-to-cart-button" routerLink="/koszyk">Przejdź do koszyka</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Rejestracja lub logowanie</a>
+        </li>
+
+        <li class="nav-item">
+
+        </li>
+
+        <li class="nav-item dropdown login-item">
+          <a class="nav-link dropdown-toggle logged-user-button" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="logged-user">👤 {{this.getUser()}}</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+            <div class="dropdown-item show-my-orders-button">
+              <button class="btn btn-block" routerLink="/view-my-orders">Pokaż zamówienia</button>
+            </div>
+            <div
+              class="dropdown-item admin-panel-button"
+              *ngIf="this.isAdmin"
+            >
+              <button class="btn btn-block" routerLink="/admin-panel">Panel administratora</button>
+            </div>
+            <div class="dropdown-item">
+              <button class="btn btn-block" (click)="this.logout()">Wyloguj</button>
+            </div>
+          </div>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>

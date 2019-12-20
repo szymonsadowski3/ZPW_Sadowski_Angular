@@ -1,0 +1,21 @@
+<div class="edit-wycieczka pt-3 shadow">
+  <button type="button" class="btn btn-outline-primary mb-3" [routerLink]="['/admin-panel']">Wróć do panelu</button>
+
+  <h3>Edytujesz wycieczkę: {{this.wycieczkaId}}</h3>
+
+  <form [formGroup]="modelForm" (ngSubmit)="onSubmit(modelForm)">
+    <div class="form-group">
+      <label>nazwa:</label><input name="nazwa" formControlName="nazwa" class="form-control">
+      <label>docelowyKrajWycieczki:</label><input name="docelowyKrajWycieczki" formControlName="docelowyKrajWycieczki"
+                                                  class="form-control">
+      <label>dataRozpoczecia:</label><input name="dataRozpoczecia" formControlName="dataRozpoczecia" class="form-control">
+      <label>dataZakonczenia:</label><input name="dataZakonczenia" formControlName="dataZakonczenia" class="form-control">
+      <label>cenaJednostkowa:</label><input name="cenaJednostkowa" formControlName="cenaJednostkowa" class="form-control">
+      <label>maxIloscMiejsc:</label><input name="maxIloscMiejsc" formControlName="maxIloscMiejsc" class="form-control">
+      <label>opis:</label><input name="opis" formControlName="opis" class="form-control">
+      <label>linkDoZdj:</label><input name="linkDoZdj" formControlName="linkDoZdj" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" type="submit" tooltip="Wycieczka zedytowana!" placement="top" trigger="click">Edytuj wycieczkę</button>
+  </form>
+</div>

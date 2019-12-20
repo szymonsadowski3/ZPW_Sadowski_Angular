@@ -1,0 +1,69 @@
+<div class="card mb-4 shadow-lg wycieczka-card" style="width: 18rem;"
+     [ngClass]="{
+                'low-available-places': (wycieczka.maxIloscMiejsc - wycieczka.ileZarezerwowano) <= 3,
+                'cheapest': isCheapest,
+                'most-expensive': isMostExpensive
+             }"
+>
+  <div>
+    <button
+      class="btn add-to-cart-button"
+      tooltip="Wycieczka dodana do koszyka!" placement="bottom" trigger="click"
+      (click)="onTripAddedToCart(wycieczka)"
+    >
+      <i class="fa fa-plus"></i>
+    </button>
+  </div>
+
+  <div class="main-section" [routerLink]="['/wycieczka', wycieczka[this.IDKEY]]">
+    <img src="{{wycieczka.linkDoZdj+'?v='+wycieczka.docelowyKrajWycieczki}}" class="rounded-circle card-img"/>
+    <div class="card-body">
+      <h5 class="card-title">{{wycieczka.nazwa | uppercase}}</h5>
+    </div>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Kraj docelowy: {{wycieczka.docelowyKrajWycieczki | uppercase}}</li>
+    <li class="list-group-item">
+      📅 {{wycieczka.dataRozpoczecia}} - {{wycieczka.dataZakonczenia}}
+      📅
+    </li>
+    <li class="list-group-item">
+      💶 Cena: {{wycieczka.cenaJednostkowa | currency: 'EUR'}}
+    </li>
+    <li class="list-group-item">
+      ⚠️ Max ilość miejsc: {{wycieczka.maxIloscMiejsc}}
+    </li>
+    <li class="list-group-item">
+      <div *ngIf="wycieczka.ileZarezerwowano == wycieczka.maxIloscMiejsc; else availablePlaces">
+        Brak dostępnych miejsc!
+      </div>
+
+      <ng-template #availablePlaces>
+        Ile zarezerwowano: {{wycieczka.ileZarezerwowano}}
+      </ng-template>
+    </li>
+    <li class="list-group-item" *ngIf="(wycieczka && wycieczka.oceny && wycieczka.oceny.length > 0)">
+      <div>⭐ Średnia ocena: {{this.getTripAvgRating(wycieczka) | number}}</div>
+    </li>
+  </ul>
+  <div class="card-body">
+      <button
+        class="btn btn-primary plus-button"
+        [ngClass]="{'hidden-button': wycieczka.ileZarezerwowano == wycieczka.maxIloscMiejsc}"
+        (click)="onClickPlusButton(wycieczka)"
+      >
+      <i class="fa fa-plus"></i>
+    </button>
+
+    <button
+      class="btn btn-warning minus-button"
+      [ngClass]="{'hidden-button': wycieczka.ileZarezerwowano == 0}"
+      (click)="onClickMinusButton(wycieczka)"
+    >
+      <i class="fa fa-minus"></i>
+    </button>
+  </div>
+  <div class="card-body oceny-section">
+  </div>
+</div>

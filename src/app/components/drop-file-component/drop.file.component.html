@@ -1,0 +1,24 @@
+<div class="center">
+  <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+                 (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" multiple="true">
+    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+      <div>Upuść pliki do galerii tutaj:&nbsp;&nbsp;</div>
+      <br>
+      <button class="btn btn-primary" (click)="openFileSelector()">Wybierz pliki</button>
+    </ng-template>
+  </ngx-file-drop>
+  <div class="upload-table">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Nazwa pliku:</th>
+      </tr>
+      </thead>
+      <tbody class="upload-name-style">
+      <tr *ngFor="let item of files; let i=index">
+        <td><strong>{{ item.relativePath }}</strong></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

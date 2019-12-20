@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var socket = io.connect('http://localhost:8080');
+    socket.on('message', function (time) {
+      document.getElementById('time').innerHTML = time;
+    });
+  </script>
+</head>
+<body>Aktualny czas w serwerze: <b><span id="time"></span></b>
+</body>
+</html>

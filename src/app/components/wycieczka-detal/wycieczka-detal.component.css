@@ -1,0 +1,74 @@
+.cheapest {
+  border: 6px solid rgba(117, 255, 198, .5);
+}
+
+.most-expensive {
+  border: 6px solid rgba(255, 122, 139, .5);
+}
+
+.plus-button, .minus-button {
+  width: 50%;
+}
+
+.hidden-button {
+  visibility: hidden;
+}
+
+.card-img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 1rem auto 0;
+}
+
+.remove-button {
+  width: 50px;
+  height: 50px;
+  background-color: #ff7e8d;
+  margin-top: .2rem;
+  margin-left: .2rem;
+}
+
+.remove-button:hover{
+  background-color: #ff3d46;
+}
+
+.add-to-cart-button {
+  width: 50px;
+  height: 50px;
+  background-color: #adffc4;
+  margin-top: .2rem;
+  margin-left: .2rem;
+}
+
+.add-to-cart-button:hover {
+  background-color: #5bff75;
+}
+
+.low-available-places h5 {
+  color: #ff7b3d;
+}
+
+h5 {
+  text-align: center;
+}
+
+.wycieczka-detail {
+  margin-top: 1rem;
+}
+
+.detail-img {
+  height: 400px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  /*object-fit: contain;*/
+  object-fit: fill;
+}
+
+.date-picker-wrapper {
+  height: 50px;
+}
+
+.wycieczka-detal-wrapper {
+  margin-top: 7rem;
+}

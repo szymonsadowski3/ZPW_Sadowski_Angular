@@ -1,0 +1,92 @@
+<div class="admin-panel">
+  <h1>Admin panel</h1>
+
+  <div class="shadow trips-management">
+    <h2 class="mt-2 mb-2">Zarządzanie wycieczkami</h2>
+
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Zaznaczenie</th>
+        <th scope="col">ID</th>
+        <th scope="col">Nazwa</th>
+        <th scope="col">Kraj docelowy</th>
+        <th scope="col">Data rozpoczecia</th>
+        <th scope="col">Data zakonczenia</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Akcje</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        *ngFor="let wycieczka of this.wycieczki"
+      >
+        <td scope="row">
+          <div class="form-check">
+            <input [(ngModel)]="checkedTripsForPromotion[wycieczka[this.IDKEY]]" class="form-check-input checkbox-2x" type="checkbox" value="" name="checkForPromotion">
+          </div>
+        </td>
+        <td>{{wycieczka[this.IDKEY]}}</td>
+        <td><a [routerLink]="['/wycieczka', wycieczka[this.IDKEY]]">{{wycieczka.nazwa}}</a></td>
+        <td>{{wycieczka.docelowyKrajWycieczki}}</td>
+        <td>{{wycieczka.dataRozpoczecia}}</td>
+        <td>{{wycieczka.dataZakonczenia}}</td>
+        <td>{{wycieczka.cenaJednostkowa}}</td>
+        <td>
+          <div class="btn-group actions-group" role="group" aria-label="Basic example">
+            <button
+              class="btn remove-button"
+              mwlConfirmationPopover
+              [popoverMessage]="'Na pewno chcesz usunąć tą wycieczkę?'"
+              (confirm)="this.removeTrip(wycieczka)"
+            >
+              <i class="fa fa-times"></i>
+            </button>
+
+            <button
+              class="btn update-button"
+              [routerLink]="['/edit-trip', wycieczka[this.IDKEY]]"
+            >
+              <i class="fa fa-edit"></i>
+            </button>
+
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Zdefiniuj promocję: </h3>
+
+    <div class="promotion-section">
+      <form>
+        <div class="form-group">
+          <label for="czasTrwania">Czas trwania (w minutach):</label>
+          <input type="number" min="1" max="1000" step="1" class="form-control" id="czasTrwania" name="czasTrwania" [(ngModel)]="czasTrwania" [value]="czasTrwania">
+        </div>
+        <div class="form-group">
+          <label for="poziomObnizki">Poziom obniżki w procentach:</label>
+          <input type="number" min="1" max="100" step="1" class="form-control" id="poziomObnizki" name="poziomObnizki" [(ngModel)]="poziomObnizki" [value]="poziomObnizki">
+        </div>
+      </form>
+
+      <button
+        class="btn btn-primary"
+        tooltip="Promocja dodana!" placement="bottom" trigger="click"
+        (click)="addPromotion()"
+      >
+        Zatwierdź promocję
+      </button>
+    </div>
+  </div>
+
+  <new-wycieczka-component></new-wycieczka-component>
+
+
+  <div class="additional-actions mt-3 mb-3">
+    <button class="btn btn-primary mr-3" (click)="this.addExampleTrips()">Add example trips</button>
+    <button class="btn btn-danger" (click)="this.removeAllTrips()">Remove all trips</button>
+  </div>
+</div>
